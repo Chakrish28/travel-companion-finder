@@ -3,9 +3,11 @@ const router = express.Router();
 
 const auth = require("../middleware/authMiddleware");
 const {
-  createMatch,
-} = require("../controllers/matchController");
+  createTrip,
+  getTrips
+} = require("../controllers/tripController");
 
-router.post("/", auth, createMatch);
+router.post("/", auth, createTrip);
+router.get("/", auth, getTrips);
 
 module.exports = router;
